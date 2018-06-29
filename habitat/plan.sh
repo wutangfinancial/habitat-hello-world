@@ -10,6 +10,6 @@ do_build() {
 }
 
 do_install() {
-  chmod +x $pkg_prefix/hello.sh
-  $pkg_prefix/bin/hello.sh
+  chmod +x $pkg_prefix/hello-world.sh
+  $pkg_prefix/hello-world.sh
 }
