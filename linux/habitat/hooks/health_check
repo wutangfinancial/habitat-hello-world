@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Per https://www.habitat.sh/docs/reference/#health_check
+# The health_check script must return a valid exit code from the list below.
+# 0- ok, 1- warning, 2- critical, 3- unknown
+# any other code - failed health check with additional output taken from health_check stdout.
+
+if [ -e {{pkg.path}}/hello-world.sh ]
+then
+    exit 0
+else
+    exit 2
+fi
