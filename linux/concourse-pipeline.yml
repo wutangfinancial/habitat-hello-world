@@ -1,0 +1,18 @@
+---
+resources:
+  - name: habitat-hello-world-git
+    check_every: 1m
+    type: git
+    source:
+      uri: git@github.ford.com:ASALOWI1/habitat-hello-world.git
+      branch: develop
+      private_key: {{private_key}}
+
+jobs:
+  - name: asalowi1-habitat-hello-world-linux-pipeline
+    public: true
+    plan:
+      - get: habitat-hello-world-git
+      - task: concourse-echo-hello-world
+        file: habitat-hello-world-git/linux/concouse-task-hello-world.yml
+...
