@@ -4,8 +4,8 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: {{docker_repository}}
-    tag: {{docker_tag}}
+    repository: {{repository}}
+    tag: {{tag}}
     username: {{quay_username}}
     password: {{quay_password}}
 
