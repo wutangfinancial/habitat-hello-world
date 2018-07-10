@@ -14,5 +14,16 @@ jobs:
     plan:
       - get: habitat-hello-world-git
       - task: concourse-echo-hello-world
-        file: habitat-hello-world-git/linux/concourse-task-hello-world.yml
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: quay.k8s.ford.com/asalowi1/hab-resource
+              tag: latest
+              username: {{quay_username}}
+              password: {{quay_password}}
+          run:
+            path: echo
+            args: [Hello World!]
 ...
