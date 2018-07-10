@@ -1,6 +1,14 @@
 ---
 platform: linux
 
+image_resource:
+  type: docker-image
+  source:
+    repository: quay.k8s.ford.com/asalowi1/hab-resource
+    tag: asalowi1
+    username: asalowi1
+    password: NUL81U/Xfx173Dbdco2B39aegZ08/tBvhok6JrpQmGFMbFpczceM0W179kq0jYVt
+
 run:
   path: echo
   args: [hello world]

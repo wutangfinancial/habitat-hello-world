@@ -5,19 +5,12 @@ resources:
     type: git
     source:
       uri: git@github.ford.com:ASALOWI1/habitat-hello-world.git
-      branch: develop
+      branch: master
       private_key: {{private_key}}
 
 jobs:
   - name: asalowi1-habitat-hello-world-linux-pipeline
     public: true
-    image_resource:
-      type: docker-image
-      source:
-        repository: {{repository}}
-        tag: {{tag}}
-        username: {{quay_username}}
-        password: {{quay_password}}
     plan:
       - get: habitat-hello-world-git
       - task: concourse-echo-hello-world
