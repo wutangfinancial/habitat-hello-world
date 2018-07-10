@@ -14,5 +14,5 @@ jobs:
     plan:
       - get: habitat-hello-world-git
       - task: concourse-echo-hello-world
-        file: habitat-hello-world-git/linux/concouse-task-hello-world.yml
+        file: habitat-hello-world-git/linux/concourse-task-hello-world.yml
 ...
