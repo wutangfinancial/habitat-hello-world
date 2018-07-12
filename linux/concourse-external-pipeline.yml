@@ -1,0 +1,26 @@
+---
+resources:
+  - name: habitat-hello-world-git
+    check_every: 1m
+    type: git
+    source:
+      uri: https://github.com/wutangfinancial/habitat-hello-world.git
+      branch: develop
+
+jobs:
+  - name: hab-pkg-build
+    public: true
+    plan:
+      - get: habitat-hello-world-git
+      - task: hab-pkg-build-habitat-hello-world
+        config:
+          platform: linux
+          image_resource:
+            type: docker-image
+            source:
+              repository: habitat-docker-registry.bintray.io/studio
+              tag: latest
+          run:
+            path: hab
+            args: [-- pkg build]
+...

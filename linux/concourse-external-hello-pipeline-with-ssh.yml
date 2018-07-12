@@ -1,0 +1,25 @@
+---
+resources:
+  - name: habitat-hello-world-git
+    check_every: 1m
+    type: git
+    source:
+      uri: git@github.com:wutangfinancial/habitat-hello-world.git
+      branch: develop
+      private_key: {{private_key}}
+
+jobs:
+- name: job-hello-world
+  public: true
+  plan:
+  - get: habitat-hello-world-git
+  - task: hello-world
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source: {repository: busybox}
+      run:
+        path: echo
+        args: [hello world]
+...

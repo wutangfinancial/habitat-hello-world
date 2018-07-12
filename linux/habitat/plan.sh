@@ -1,5 +1,5 @@
 pkg_name=habitat-hello-world
-pkg_origin=asalowi1
+pkg_origin=wutangfinancial
 pkg_version="0.2.5"
 pkg_maintainer="Adam Salowitz <asalowi1@ford.com>"
 pkg_license=("Apache-2.0")
